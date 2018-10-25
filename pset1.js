@@ -16,6 +16,26 @@
             age: 31
         }
 */
+const getSuperHero =(name , alterEgoName , villain , age )=>{
+    
+    const getSuperHeroObj = {
+
+        "Name" : name, 
+        "alterEgoName": alterEgoName,
+        "IsVillain" : villain,
+        "Age" : age,
+
+
+
+    }
+return getSuperHeroObj
+    
+}
+
+console.log(getSuperHero("Benjamin Stutter", "FlyOnAWall",false, 33)) 
+
+
+
 
 /*
     @func updateSuperHero
@@ -109,5 +129,3 @@
             isRich: true
         }     
 */
-
-
