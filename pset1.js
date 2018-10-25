@@ -96,6 +96,16 @@ console.log('---------------------------------------------');
         }   
 */
 
+const updateSuperHeroAction = (superHero, actionName, actionFunc) =>{
+    superHero[actionName] = actionFunc;
+    return superHero;
+}
+
+//test
+console.log('------------------- 3. updateSuperHeroAction test -------------------');
+console.log(updateSuperHeroAction(batman,'saySomething', function saySomething() {return "I'm Batman";} ));
+console.log('---------------------------------------------');
+
 /*
     @func updateSuperHeroInBulk
     @param {object} superHero
