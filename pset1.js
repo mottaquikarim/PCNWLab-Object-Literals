@@ -26,7 +26,9 @@ const getSuperHero = (name, alterEgoName, isVillain, age) => {
     };
 }
 //test
+console.log('------------------- 1. getSuperHero test -------------------');
 console.log(getSuperHero('Batman','Bruce Wayne',false,31));
+console.log('---------------------------------------------');
 
 /*
     @func updateSuperHero
@@ -53,6 +55,17 @@ console.log(getSuperHero('Batman','Bruce Wayne',false,31));
             likesBats: true
         }
 */
+const batman = getSuperHero('Batman','Bruce Wayne',false,31);
+
+const updateSuperHero = (superHero, keyName, keyValue) =>{
+    superHero[keyName] = keyValue;
+    return superHero;
+}
+
+//test
+console.log('------------------- 2. updateSuperHero test -------------------');
+console.log(updateSuperHero(batman,'likesBats',true));
+console.log('---------------------------------------------');
 
 /*
     @func updateSuperHeroAction
