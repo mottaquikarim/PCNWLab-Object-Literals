@@ -143,5 +143,15 @@ console.log('---------------------------------------------');
             isRich: true
         }     
 */
-
-
+const updateSuperHeroInBulk = (superHero, properties) => {
+    properties.forEach( (cI,i) =>{
+        const nextItem = properties[i+1];
+        if (i %2 === 0) {superHero[cI] = nextItem;}
+    } );
+    return superHero;
+}
+//test
+console.log('------------------- 4. updateSuperHeroInBulk test -------------------');
+console.log(updateSuperHeroInBulk(batman,['saySomething',function saySomething(){return "I'm Batman";},'likesBats',true,
+'isRich',true]));
+console.log('---------------------------------------------');
