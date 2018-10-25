@@ -17,6 +17,23 @@
         }
 */
 
+const getSuperHero = (name, alterEgoName, isVillain, age) => {
+
+    return {
+
+        name,
+        alterEgoName,
+        isVillain,
+        age
+
+    }
+
+}
+
+const Batman = getSuperHero("Batman", "Bruce Wayne", false, 31)
+// console.log(Batman)
+
+
 /*
     @func updateSuperHero
     @param {object} superHero
@@ -42,6 +59,16 @@
             likesBats: true
         }
 */
+
+
+const updateSuperHero = (superHero, keyName, keyValue) => {
+
+    superHero[keyName] = keyValue
+
+}
+
+// updateSuperHero(Batman, `likesBats`, true)
+// console.log(Batman)
 
 /*
     @func updateSuperHeroAction
@@ -71,6 +98,15 @@
             }
         }   
 */
+
+const updateSuperHeroAction = (superHero, actionName, actionFunc) => {
+
+    superHero[actionName] = actionFunc
+
+}
+
+// updateSuperHeroAction(Batman, "saySomething", catchPharse = () => "I'm Batman"
+// console.log(Batman)
 
 /*
     @func updateSuperHeroInBulk
@@ -110,4 +146,23 @@
         }     
 */
 
+const updateSuperHeroInBulk = (superHero, properties) => {
 
+    for (let i = 0; i < properties.length; i+=2){
+        superHero[properties[i]] = properties[i+1]
+    }
+
+}
+
+updateSuperHeroInBulk(Batman, [
+    'saySomething', 
+    function saySomething() {
+        return "I'm Batman";
+    },
+    'likesBats',
+    true,
+    'isRich',
+    true])
+
+
+console.log(Batman)
