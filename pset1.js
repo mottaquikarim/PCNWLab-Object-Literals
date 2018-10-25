@@ -17,6 +17,17 @@
         }
 */
 
+const getSuperHero = (name, alterEgoName, isVillain, age) => {
+    return {
+        name,
+        alterEgoName,
+        isVillain,
+        age
+    };
+}
+//test
+console.log(getSuperHero('Batman','Bruce Wayne',false,31));
+
 /*
     @func updateSuperHero
     @param {object} superHero
