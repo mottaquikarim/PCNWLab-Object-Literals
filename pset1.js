@@ -56,6 +56,7 @@ console.log(getSuperHero());
             likesBats: true
         }
 */
+console.log('-------problem2--------')
 
 /*
     @func updateSuperHeroAction
