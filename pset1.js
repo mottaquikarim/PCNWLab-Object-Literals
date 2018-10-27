@@ -29,7 +29,7 @@ const getSuperHero = (name = 'Batman', alterEgoName = 'Bruce Wayne', isVillain =
 const Batman = getSuperHero();
 console.log(Batman);
 console.log(Batman['alterEgoName']);
-console.log("-----------------------------------")
+console.log("-----------------1------------------")
 /*
     @func updateSuperHero
     @param {object} superHero
@@ -55,12 +55,13 @@ console.log("-----------------------------------")
         }
 */
 
- const updateSuperHero = (superHero, keyName, keyValue) => {
+  updateSuperHero = (superHero, keyName, keyValue) => {
             superHero[keyName] = keyValue;
             return superHero;
  }
     //  console.log(updateSuperHero());
      console.log(updateSuperHero(Batman,'likesBats', false));
+     console.log("----------------2-------------------")
 /*
     @func updateSuperHeroInBulk
     @param {object} superHero
@@ -98,5 +99,23 @@ console.log("-----------------------------------")
             isRich: true
         }     
 */
+ const updateSuperHeroBulk = (superHero,keyName, keyValue) => {
+    superHero[keyName] = keyValue;
+    return superHero; 
+}
+console.log(updateSuperHeroBulk(Batman,'likesBats', true));
 
+  updateSuperHeroBulk (Batman, 'saySomething', function saySomething(){
+          return "Im a Batman"; 
+  });
+ // console.log(Batman.saySomething);
+    console.log(Batman);
+    console.log(Batman.saySomething());
 
+// const updateSuperHeroInBulk = (superHero, properties, keyValue) => {
+//      superHero[properties] = keyValue;
+//     return superHero;
+
+// }
+
+// console.log(updateSuperHeroInBulk(Batman,'likesBats', true));
