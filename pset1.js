@@ -9,7 +9,7 @@
             that describes superhero
     @example - 
         getSuperHero('Batman', 'Bruce Wayne', false, 31);
-        {
+        { 
             name: 'Batman',
             alterEgoName: 'Bruce Wayne',
             isVillain: false,
@@ -36,7 +36,8 @@ console.log(getSuperHero("Batman", "Bruce Wayne", false, 31));
             name: 'Batman',
             alterEgoName: 'Bruce Wayne',
             isVillain: false,
-            age: 31
+            age: 31,
+            likesBats: undefined
         }
         updateSuperHero(batman, 'likesBats', true);
         {
@@ -47,7 +48,17 @@ console.log(getSuperHero("Batman", "Bruce Wayne", false, 31));
             likesBats: true
         }
 */
-
+let updateSuperHero = (superHero, keyName, keyValue) =>{
+    superHero[keyName] = keyValue
+     return superHero
+}
+const batman = {
+    name: 'Batman',
+    alterEgoName: 'Bruce Wayne',
+    isVillain: false,
+    age: 31
+}
+console.log(updateSuperHero(batman, "likesBats", true));
 /*
     @func updateSuperHeroAction
     @param {object} superHero
