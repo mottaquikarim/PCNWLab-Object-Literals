@@ -58,6 +58,13 @@ console.log(batman);
         }
 */
 
+const updateSuperHero = (obj, key, keyValue) => {
+    obj[key] = keyValue;
+    return obj
+}
+console.log(updateSuperHero(batman, 'likesBats', true));
+// console.log(batman)
+
 /*
     @func updateSuperHeroAction
     @param {object} superHero
