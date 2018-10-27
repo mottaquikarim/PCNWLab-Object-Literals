@@ -126,4 +126,23 @@ console.log(updateSuperHero(batman, "likesBats", true));
         }     
 */
 
+const updateSuperHeroInBulk = (superHero, properties) => {
+
+    for(let x = 0; x < properties.length; x+=2){
+
+            superHero[properties[x]] = properties[x + 1]
+    }
+
+    return superHero
+
+}
+console.log(updateSuperHeroInBulk(batman,[
+    'saySomething', function saySomething () {
+        return "I'm Batman";
+    }, 
+    'likesBats', 
+    true, 
+    'isRich', 
+    true]
+));
 
