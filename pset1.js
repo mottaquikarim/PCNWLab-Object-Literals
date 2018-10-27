@@ -16,6 +16,11 @@
             age: 31
         }
 */
+let getSuperHero = (name, alterEgoName, isVillain, age) => {
+    return{name, alterEgoName, isVillain, age};
+}
+
+console.log(getSuperHero("Batman", "Bruce Wayne", false, 31));
 
 /*
     @func updateSuperHero
