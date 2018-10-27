@@ -20,7 +20,7 @@
 console.log('-------problem1--------');
 
 const getSuperHero = (name ='Batman', alterEgoName='Bruce Wayne', isVillain=false, age =31) => {
-    const heroObj ={
+    let heroObj ={
         name,
         alterEgoName,
         isVillain,
@@ -28,6 +28,8 @@ const getSuperHero = (name ='Batman', alterEgoName='Bruce Wayne', isVillain=fals
     }
     return heroObj
 }
+
+const batman = getSuperHero()
 
 console.log(getSuperHero());
 
@@ -56,7 +58,18 @@ console.log(getSuperHero());
             likesBats: true
         }
 */
-console.log('-------problem2--------')
+console.log('-------problem2--------');
+
+
+const updateSuperHero = (superHero, keyName, keyValue )=>{
+    superHero[keyName] = keyValue
+return superHero
+}
+
+
+
+
+console.log(updateSuperHero(batman, 'likesBats', true ));
 
 /*
     @func updateSuperHeroAction
@@ -86,6 +99,7 @@ console.log('-------problem2--------')
             }
         }   
 */
+console.log('-------problem3--------');
 
 /*
     @func updateSuperHeroInBulk
