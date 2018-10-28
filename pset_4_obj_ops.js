@@ -183,3 +183,34 @@ console.log(addObjs(obj1, obj2));
           'g': 1,
         }
 */
+
+const addNObjs = (arrOfObjs) => {
+    const copyObj = {};
+    for(let i = 0; i < arrOfObjs.length; i++){
+       
+        let keys = Object.keys(arrOfObjs[i]);
+        for (let j = 0; j < keys.length; j++) {
+            copyObj[ keys[j] ] = arrOfObjs[i][ keys[j] ];
+        }
+    }
+    return copyObj;
+    
+}
+
+const obj5 = {
+    'a': 1,
+    'b': 2,
+    'c': 3,
+  }
+  const obj6 = {
+    'd': 1,
+    'e': 1,
+    'f': 1,
+    'a': 0,
+  }
+  const obj7 = {
+    'd': 0,
+    'g': 1,
+    'a': -1,
+  }
+console.log(addNObjs([obj5, obj6, obj7]));
