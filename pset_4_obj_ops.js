@@ -75,9 +75,10 @@ const cpyProps = (obj) => {
     let keys = Object.keys(obj);
 
     for (let i = 0; i < keys.length; i++) {
-        copyObj[keys[i]] = obj[ keys[i] ];
-        copyObj[keys[i] + '_cpy'] = obj[ keys[i] ];
+        copyObj[ keys[i] ] = obj[ keys[i] ];
+        copyObj[ keys[i] + '_cpy'] = obj[ keys[i] ];
     }
+
     return copyObj;
 }
 
@@ -87,8 +88,6 @@ const obj = {
     'c': 3,
   }
   console.log(cpyProps(obj));
-
-
 
 /*
     @func addObjs
@@ -118,6 +117,38 @@ const obj = {
           'f': 1,
         }
 */
+
+const addObjs = (obj1, obj2) => {  
+    const copyObj = {};
+    let keys = Object.keys(obj1);
+
+    for (let i = 0; i < keys.length; i++) {
+        copyObj[ keys[i] ] = obj1[ keys[i] ];
+    }
+    keys = Object.keys(obj2);
+
+    for (let i = 0; i < keys.length; i++) {
+        copyObj[ keys[i] ] = obj2[ keys[i] ];
+    }
+
+    return copyObj;
+}
+
+
+const obj1 = {
+    'a': 1,
+    'b': 2,
+    'c': 3,
+  }
+  const obj2 = {
+    'd': 1,
+    'e': 1,
+    'f': 1,
+  }
+
+console.log(addObjs(obj1, obj2));
+  
+
 
 /*
     @func addNObjs
