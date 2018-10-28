@@ -63,6 +63,8 @@ const updateSuperHero = (obj, key, keyValue) => {
     return obj
 }
 console.log(updateSuperHero(batman, 'likesBats', true));
+
+console.log(Object.keys(batman))
 // console.log(batman)
 
 /*
