@@ -11,6 +11,15 @@
              // returns {'a': 1, 'b': 2}
 */
 
+const addObjects = (a, b) => {
+
+    return Object.assign({}, a, b);
+}
+console.log(addObjects({'a': 1}, {'b': 2}))
+
+console.log(addObjects({'a': 1, 'b': 2}, {'b': 2, 'c': 3}))
+             // returns {'a': 1, 'b': 2}
+
 /*  2
     @function appendEachObject
     @param a {Object}
