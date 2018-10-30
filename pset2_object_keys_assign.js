@@ -68,6 +68,22 @@ console.log(appendEachObject({'a': 1, 'b': true}, 5))
              // returns {'a': 3,}
 */
 
+const mapObject = (a, b) => {
+    const keys = Object.keys(a);
+    for(let i = 0; i < keys.length; i++){
+
+        a[keys[i]] = b(keys[i], a[keys[i]])
+    }
+    return a;
+}
+
+console.log(mapObject({'a': 1,}, (key, value) => {
+    console.log(key) // a
+    console.log(value) // 1
+    
+    return value+2;
+}));
+         // returns {'a': 3,}
 /*  4
     @function subtractObject
     @param a {Object}
