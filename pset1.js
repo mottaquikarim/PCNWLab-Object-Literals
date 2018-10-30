@@ -17,6 +17,21 @@
         }
 */
 
+const getSuperHero = (name = 'Spider-Man', alterEgoName = 'Peter Parker', isVillain = false, age = 24) => {
+    const superHeroObj = {
+        name,
+        alterEgoName,
+        isVillain,
+        age,
+    }
+    return superHeroObj;
+}
+
+console.log(getSuperHero());
+const spiderMan = getSuperHero();
+console.log(spiderMan);
+console.log(spiderMan['alterEgoName']);
+
 /*
     @func updateSuperHero
     @param {object} superHero
@@ -32,7 +47,7 @@
             alterEgoName: 'Bruce Wayne',
             isVillain: false,
             age: 31
-        }
+        }keyName
         updateSuperHero(batman, 'likesBats', true);
         {
             name: 'Batman',
@@ -42,6 +57,21 @@
             likesBats: true
         }
 */
+
+const batman = {
+    name: 'Batman',
+    alterEgoName: 'Bruce Wayne',
+    isVillain: false,
+    age: 31
+}
+
+const updateSuperHero = (superHero, keyName, keyValue) => {
+    superHero[keyName] = keyValue;
+}
+
+updateSuperHero(batman, 'likesBats', true);
+
+console.log(batman);
 
 /*
     @func updateSuperHeroAction
@@ -71,6 +101,18 @@
             }
         }   
 */
+
+const updateSuperHeroAction = (superHero, actionName, actionFunc) => {
+    superHero[actionName] = actionFunc;
+}
+
+updateSuperHeroAction(batman, 'saySomething', function saySomething() {
+    return "I'm Batman";
+})
+
+console.log(batman);
+console.log(batman.saySomething);
+console.log(batman.saySomething());
 
 /*
     @func updateSuperHeroInBulk
@@ -110,4 +152,18 @@
         }     
 */
 
+batArray = ['saySomething', function saySomething() {
+    return "I'm not wearing hockey pads"},
+    'likesBats', true, 'isRich', true, 'lol'];
 
+const updateSuperHeroInBulk = (superHero, properties) => {
+    properties.forEach((element, index, arr) => {
+        if (index % 2 === 0 && !(index === arr.length -1)) {
+            superHero[element] = arr[index +1];
+        }
+    });
+}
+
+updateSuperHeroInBulk(batman, batArray);
+
+console.log(batman);
