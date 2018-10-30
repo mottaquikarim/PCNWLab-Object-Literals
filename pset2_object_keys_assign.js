@@ -20,18 +20,35 @@ console.log(addObjects({'a': 1}, {'b': 2}))
 console.log(addObjects({'a': 1, 'b': 2}, {'b': 2, 'c': 3}))
              // returns {'a': 1, 'b': 2}
 
+
+
 /*  2
     @function appendEachObject
     @param a {Object}
     @param b {Number}
-    @returns {Object}
     @description:
+    @returns {Object}
         - given an object and a number, append number
             to each item in object if that item is a number
         - assume objects are flat (ie, no child objects)
     @example appendEachObject({'a': 1, 'b': true}, 5)
              // returns {'a': 6, 'b': true}
 */
+
+
+const appendEachObject = (a, b) => {
+    const keys = Object.keys(a);
+    for(let i = 0; i < keys.length; i++){
+
+        if(typeof a[keys[i]] === 'number'){
+            a[keys[i]] += b;
+        }
+    }
+    return a;
+}
+
+console.log(appendEachObject({'a': 1, 'b': true}, 5))
+// returns {'a': 6, 'b': true}
 
 /*  3
     @function mapObject
