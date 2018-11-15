@@ -16,6 +16,20 @@
             age: 31
         }
 */
+const getSuperHero = (name="The Green Arrow", alterEgoName ="Oliver Queen", age = 31, isVillan = false) => {
+    const alias = alterEgoName;
+
+    const heroObj = {
+        name,
+        alias,
+        age,
+        "Is A Villan ?": isVillan,
+    }
+    return heroObj;
+}
+const batman = getSuperHero('Batman','Bruce Wayne', '31', false );
+console.log(batman);
+
 
 /*
     @func updateSuperHero
@@ -42,7 +56,12 @@
             likesBats: true
         }
 */
+const updateSuperHero = (superHero, keyName, keyValue) => {
+    superHero[keyName] = keyValue; // brackets is understood as the variable name  as long as the variable is not enclosed in quotations
+    return superHero; // because you are passing in by reference, you are modifying the original so you do not need a spefic return for the r
+}
 
+console.log(updateSuperHero(batman,'likebats', true));
 /*
     @func updateSuperHeroAction
     @param {object} superHero
@@ -72,6 +91,14 @@
         }   
 */
 
+const updateSuperHeroAction = (superHero, actionName, actionFunc) => {
+
+    superHero[actionName] = actionFunc
+    return superHero;
+}
+console.log( updateSuperHero(batman, 'saySomething', function saySomething() {
+    return "I'm Batman";})
+);
 /*
     @func updateSuperHeroInBulk
     @param {object} superHero
@@ -110,4 +137,20 @@
         }     
 */
 
+const updateSuperHeroInBulk = (superHero, propert) => {
+   for (let i = 0; i < propert.length; i+2) {
+       superHero[propert[i]] =
+   }
+return superHero;
 
+}
+console.log(updateSuperHeroInBulk(batman, [
+    'saySomething', 
+    function saySomething() {
+        return "I'm Batman";
+    },
+    'likesBats',
+    true,
+    'isRich',
+    true
+]));
