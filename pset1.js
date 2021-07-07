@@ -16,6 +16,20 @@
             age: 31
         }
 */
+const getSuperHero=(name="Batman",alterEgoName="Bruce Wayne", isVillain="false",age=31)=>{
+
+    
+    const heroObj={
+        "Given Noun": name,
+        "Super Hero Name:":alterEgoName,
+        "Staus":isVillain,
+        "Years of Wisdom": age
+    }
+    return heroObj;
+    }
+
+const superHero=getSuperHero("Batman","Bruce Wayne","false",31)
+console.log(getSuperHero());
 
 /*
     @func updateSuperHero
